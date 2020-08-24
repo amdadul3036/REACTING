@@ -7,10 +7,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Nayok></Nayok>
-        <Nayok></Nayok>
-        <Nayok></Nayok>
-        <Nayok></Nayok>
+        <Nayok name = "Jasim"></Nayok>
+        <Nayok name = "Shakib Khan"></Nayok>
+        <Nayok name = "Salman Khan"></Nayok>
+        <Nayok name = "Sahrukh Khan"></Nayok>
         <Nayok></Nayok>
         <Nayok></Nayok>
         <Nayok></Nayok>
@@ -20,10 +20,11 @@ function App() {
 }
 
 
-function Nayok(){
-  return <div style = {{border:'2px magenta solid', margin:'3px', padding:'5px', borderRadius:'10%'}}> 
-            <h1 style ={{color:'tomato'}}>KholNayok is Comming</h1>
-            <p>I have done about 5 movies</p>
+function Nayok(props){
+  return ( 
+  <div style = {{border:'2px magenta solid', margin:'3px', padding:'5px', borderRadius:'10%', width:'75%', height:'200px'}}> 
+            <h1 style ={{color:'tomato'}}>Nayok -- {props.name} </h1>
+            <p>He has done about 5 movies</p>
          </div>
-}
+)}
 export default App;

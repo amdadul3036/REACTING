@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        
+        <MovieCounter></MovieCounter>
         <Nayok name = {Nayoks[0]}></Nayok>
         <Nayok name = {Nayoks[1]}></Nayok>
         <Nayok name = {Nayoks[2]}></Nayok>
@@ -30,4 +30,24 @@ function Nayok(props){
             <p>He has done about 5 movies</p>
          </div>
 )}
+
+
+function MovieDisplay(props){
+  return <h4>Movies I have acted:{props.movies} </h4>
+}
+
+function MovieCounter(){
+    const [movieCounter , setMovieCounter] = useState(1);
+    const handleIncrease = () => {
+      const newMovieCount = movieCounter + 1;
+      setMovieCounter(newMovieCount);
+    }
+  return(
+  <div>
+    <button onClick = {handleIncrease}>Add Movie</button>
+    <h1>No. of Movies: {movieCounter}</h1>
+    <MovieDisplay movies = {movieCounter}></MovieDisplay>
+  </div>
+  )
+}
 export default App;

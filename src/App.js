@@ -3,19 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const Nayoks = ['Jasim','Manna','Maroof','Bapparaz','Razzak']
+  const Nayoks = ['Jasim','Manna','Maroof','Bapparaz','Razzak', 'Salman Khan', 'Jhankar']
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <MovieCounter></MovieCounter>
-        <Nayok name = {Nayoks[0]}></Nayok>
-        <Nayok name = {Nayoks[1]}></Nayok>
-        <Nayok name = {Nayoks[2]}></Nayok>
-        <Nayok name = {Nayoks[3]}></Nayok>
-        <Nayok name = {Nayoks[4]}></Nayok>
-        <Nayok name = {Nayoks[5]}></Nayok>
-        <Nayok name = {Nayoks[6]}></Nayok>
+        {
+          Nayoks.map(nayok => <Nayok name = {nayok}></Nayok> )
+        }
       </header>
     </div>
   );
